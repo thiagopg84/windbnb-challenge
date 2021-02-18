@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #eb5757;
+    --color-secondary: #333333;
+    --color-medium-dark: #4F4F4F;
+    --color-tertiary: #bdbdbd;
+    --font: 'Mulish', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    
+    font-family: var(--font);
+    font-weight: 400;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary)
+}
+
+.text-tertiary {
+    color: var(--color-tertiary)
+}

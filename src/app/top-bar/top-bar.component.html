@@ -1,0 +1,15 @@
+<nav [ngClass]="isNavActive ? 'nav-active' : ''">
+    <div class="top-bar__container">
+        <div class="top-bar__logo" *ngIf="!isNavActive">
+            <svg><use href="../../assets/images/sprite.svg#logo"></use></svg>
+        </div>
+        <ul class="top-bar__actions" [ngClass]="isNavActive ? 'top-bar__actions-active' : null">
+            <li class="text-secondary"><input type="text" name="location" id="location" placeholder="Helsinki, Finland" value="Helsinki, Finland" (focus)="onActivateNav()"></li>
+            <li class="text-tertiary">Add guests</li>
+            <li><svg><use href="../../assets/images/sprite.svg#magnifying-glass"></use></svg></li>
+        </ul>
+    </div>
+</nav>
+<div class="close-div" (click)="onDeactivateNav()" *ngIf="isNavActive">
+
+</div>
