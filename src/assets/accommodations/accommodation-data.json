@@ -1,0 +1,242 @@
+{
+  "0": {
+    "isSuperHost": true,
+    "roomType": "Entire apartment",
+    "rating": 4.7,
+    "shortDescription": "COCO",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Brasília",
+    "country": "Brazil"
+  },
+  "1": {
+    "isSuperHost": false,
+    "roomType": "Private room",
+    "rating": 4.3,
+    "shortDescription": "Bem legalzim",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Cusco",
+    "country": "Peru"
+  },
+  "2": {
+    "isSuperHost": false,
+    "roomType": "Entire house",
+    "rating": 4.9,
+    "shortDescription": "eefefefefef",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Machu Picchu",
+    "country": "Peru"
+  },
+  "3": {
+    "isSuperHost": false,
+    "roomType": "Private room. 2 beds",
+    "rating": 4.2,
+    "shortDescription": "shsdhdshdsh",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "London",
+    "country": "England"
+  },
+  "4": {
+    "isSuperHost": true,
+    "roomType": "Entire apartment",
+    "rating": 5,
+    "shortDescription": "adfadfadf",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Lima",
+    "country": "Peru"
+  },
+  "5": {
+    "isSuperHost": false,
+    "roomType": "Private room",
+    "rating": 4.7,
+    "shortDescription": "A f adf adf f",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Paris",
+    "country": "France"
+  },
+  "6": {
+    "isSuperHost": false,
+    "roomType": "One bed on bunk bed",
+    "rating": 4.7,
+    "shortDescription": "adfadfa df adf ad ad",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Prague",
+    "country": "Czech Republic"
+  },
+  "7": {
+    "isSuperHost": true,
+    "roomType": "Entire house. 3 suites",
+    "rating": 4.8,
+    "shortDescription": "AWESOME FDP",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Rome",
+    "country": "Italy"
+  },
+  "8": {
+    "isSuperHost": false,
+    "roomType": "Bedroom (private bathroom)",
+    "rating": 4.4,
+    "shortDescription": "HOSTELZIM",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Milan",
+    "country": "Italy"
+  },
+  "9": {
+    "isSuperHost": false,
+    "roomType": "2 bedrooms",
+    "rating": 4.1,
+    "shortDescription": "HEHEHEHE",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Antwerp",
+    "country": "Belgium"
+  },
+  "10": {
+    "isSuperHost": true,
+    "roomType": "Studio",
+    "rating": 5,
+    "shortDescription": "ahuahuhsauahuah",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Bruge",
+    "country": "Belgium"
+  },
+  "11": {
+    "isSuperHost": false,
+    "roomType": "Entire apartment",
+    "rating": 4.9,
+    "shortDescription": "fjidaiajdia",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Amsterdam",
+    "country": "Holland"
+  },
+  "12": {
+    "isSuperHost": false,
+    "roomType": "Suite",
+    "rating": 4.75,
+    "shortDescription": "COCasasO",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Dusseldörf",
+    "country": "Germany"
+  },
+  "13": {
+    "isSuperHost": true,
+    "roomType": "Bunkbed (private bathroom)",
+    "rating": 4.9,
+    "shortDescription": "hoaoaoaoao",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "14": {
+    "isSuperHost": false,
+    "roomType": "2 suites",
+    "rating": 4.53,
+    "shortDescription": "aassasasasas",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Lisbon",
+    "country": "Portugal"
+  },
+  "15": {
+    "isSuperHost": false,
+    "roomType": "Suite",
+    "rating": 4.78,
+    "shortDescription": "ahaahahahha",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Sintra",
+    "country": "Portugal"
+  },
+  "16": {
+    "isSuperHost": true,
+    "roomType": "Entire house (2 suites)",
+    "rating": 4.97,
+    "shortDescription": "entireieieieie",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Porto",
+    "country": "Portugal"
+  },
+  "17": {
+    "isSuperHost": false,
+    "roomType": "Moquifão brabo",
+    "rating": 2.5,
+    "shortDescription": "COCO",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Ollantaytambo",
+    "country": "Peru"
+  },
+  "18": {
+    "isSuperHost": true,
+    "roomType": "Cortiço pulguento",
+    "rating": 3.2,
+    "shortDescription": "ALOK",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Dublin",
+    "country": "Ireland"
+  },
+  "19": {
+    "isSuperHost": false,
+    "roomType": "Chalé chulezento",
+    "rating": 2.35,
+    "shortDescription": "CHULÉ BRABO!",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Glasgow",
+    "country": "Scotland"
+  }
+}

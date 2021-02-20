@@ -4,9 +4,96 @@
             <svg><use href="../../assets/images/sprite.svg#logo"></use></svg>
         </div>
         <ul class="top-bar__actions" [ngClass]="isNavActive ? 'top-bar__actions-active' : null">
-            <li class="text-secondary"><input type="text" name="location" id="location" placeholder="Helsinki, Finland" value="Helsinki, Finland" (focus)="onActivateNav()"></li>
-            <li class="text-tertiary">Add guests</li>
-            <li><svg><use href="../../assets/images/sprite.svg#magnifying-glass"></use></svg></li>
+            <li class="text-secondary location">
+                <input type="text" name="location" id="location" placeholder="Helsinki, Finland" value="Helsinki, Finland" (focus)="onActivateNav('location')" [ngClass]="isNavActive ? 'input-active' : 'input-inactive'">
+                <label for="location" *ngIf="isNavActive">Location</label>
+                <div class="location-container" *ngIf="isNavActive && currentSection == 'location'">
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Helsinki, Finland</p>
+                    </div>
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Turku, Finland</p>
+                    </div>
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Oulu, Finland</p>
+                    </div>
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Vaasa, Finland</p>
+                    </div>
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Vaasa, Finland</p>
+                    </div>
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Vaasa, Finland</p>
+                    </div>
+                    <div class="location-item">
+                        <svg>
+                            <use href="../../assets/images/sprite.svg#map-pin"></use>
+                        </svg>
+                        <p>Vaasa, Finland</p>
+                    </div>
+                </div>
+            </li>
+            <li class="text-tertiary guests">
+                <button class="btn-guests" (click)="onActivateNav('guests')" *ngIf="!isNavActive">{{numberOfGuests > 0 ? numberOfGuests + ' guest(s)' : 'Add guests' }}</button>
+                <label for="btn-guests" *ngIf="isNavActive">Guests</label>
+                <button (click)="onActivateNav('guests')" *ngIf="isNavActive" class="input-active btn-active" name="btn-guests">{{numberOfGuests > 0 ? numberOfGuests + ' guest(s)' : 'Add guests' }}</button>
+                <div class="guests__wrapper" *ngIf="isNavActive && currentSection == 'guests'">
+                    <div class="guests-item">
+                        <p class="guests-type">Adults</p>
+                        <p class="guests-description">Ages 13 or above</p>
+                        <div class="guests-controls-wrapper">
+                            <div class="guests-controls__item">
+                                <button (click)="decreaseAdults()">-</button>
+                            </div>
+                            <div class="guests-controls__item">
+                                <p class="guests-counter">{{numberOfAdults}}</p>
+                            </div>
+                            <div class="guests-controls__item">
+                                <button (click)="increaseAdults()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guests-item">
+                        <p class="guests-type">Children</p>
+                        <p class="guests-description">Ages 2-12</p>
+                        <div class="guests-controls-wrapper">
+                            <div class="guests-controls__item">
+                                <button (click)="decreaseChildren()">-</button>
+                            </div>
+                            <div class="guests-controls__item">
+                                <p class="guests-counter">{{numberOfChildren}}</p>
+                            </div>
+                            <div class="guests-controls__item">
+                                <button (click)="increaseChildren()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <svg>
+                    <use href="../../assets/images/sprite.svg#magnifying-glass"></use>
+                </svg>
+            </li>
         </ul>
     </div>
 </nav>

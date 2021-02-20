@@ -33,3 +33,7 @@ html {
 .text-tertiary {
     color: var(--color-tertiary)
 }
+
+button {
+    cursor: pointer;
+}
