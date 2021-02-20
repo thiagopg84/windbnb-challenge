@@ -238,5 +238,17 @@
     "maxGuests": 0,
     "city": "Glasgow",
     "country": "Scotland"
+  },
+  "20": {
+    "isSuperHost": false,
+    "roomType": "Twin bed room",
+    "rating": 3.5,
+    "shortDescription": "Insano hein",
+    "photos": {
+      "0": "photo1.jpg"
+    },
+    "maxGuests": 0,
+    "city": "Lisbon",
+    "country": "Portugal"
   }
 }

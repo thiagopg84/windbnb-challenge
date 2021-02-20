@@ -153,18 +153,38 @@ label[for="location"], label[for="btn-guests"] {
     top: 8rem;
     left: 3rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: max-content max-content;
     grid-template-rows: auto;
     grid-row-gap: 1.6rem;
     grid-column-gap: 1.6rem;
     overflow-y: auto;
     max-height: 15rem;
+    padding-right: 1.5rem;
 }
 
 .location-item {
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-column-gap: .5rem;
+    align-items: center;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.location-item:hover {
+    background-color: var(--color-primary);
+}
+
+.location-item svg {
+    fill: var(--color-primary);
+    transition: all .2s;
+}
+
+.location-item:hover svg {
+    fill: white;
+}
+
+.location-item:hover .btn-destination {
+    color: white;
 }
 
 .guests__wrapper {
@@ -216,4 +236,16 @@ label[for="location"], label[for="btn-guests"] {
 .guests-counter {
     font-weight: 700;
     color: var(--color-secondary);
+}
+
+.btn-destination {
+    font-family: var(--font);
+    background-color: transparent;
+    border: 0;
+    padding: .5rem;
+    transition: all .2s;
+}
+
+.btn-destination:active {
+    outline: none;
 }

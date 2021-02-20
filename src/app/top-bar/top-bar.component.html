@@ -1,55 +1,21 @@
 <nav [ngClass]="isNavActive ? 'nav-active' : ''">
-    <div class="top-bar__container">
+    <form class="top-bar__container" [formGroup]="searchForm" >
         <div class="top-bar__logo" *ngIf="!isNavActive">
             <svg><use href="../../assets/images/sprite.svg#logo"></use></svg>
         </div>
         <ul class="top-bar__actions" [ngClass]="isNavActive ? 'top-bar__actions-active' : null">
             <li class="text-secondary location">
-                <input type="text" name="location" id="location" placeholder="Helsinki, Finland" value="Helsinki, Finland" (focus)="onActivateNav('location')" [ngClass]="isNavActive ? 'input-active' : 'input-inactive'">
+                <input type="text" name="location" id="location" autocomplete="off" placeholder="Where are you going?" (focus)="onActivateNav('location')" (input)="onSearchDestinations()" formControlName="destinationName" [ngClass]="isNavActive ? 'input-active' : 'input-inactive'" value="{{ destination ? destination.city + ', ' + destination.country : searchForm.value.destinationName }}">
                 <label for="location" *ngIf="isNavActive">Location</label>
                 <div class="location-container" *ngIf="isNavActive && currentSection == 'location'">
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Helsinki, Finland</p>
-                    </div>
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Turku, Finland</p>
-                    </div>
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Oulu, Finland</p>
-                    </div>
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Vaasa, Finland</p>
-                    </div>
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Vaasa, Finland</p>
-                    </div>
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Vaasa, Finland</p>
-                    </div>
-                    <div class="location-item">
-                        <svg>
-                            <use href="../../assets/images/sprite.svg#map-pin"></use>
-                        </svg>
-                        <p>Vaasa, Finland</p>
-                    </div>
+                    <ng-container *ngIf="destinations">
+                        <div class="location-item" *ngFor="let destination of filteredDestinations">
+                            <svg>
+                                <use href="../../assets/images/sprite.svg#map-pin"></use>
+                            </svg>
+                            <button type="button" class="btn-destination" (click)="defineDestination(destination.city, destination.country)">{{destination.city}}, {{destination.country}}</button>
+                        </div>
+                    </ng-container>
                 </div>
             </li>
             <li class="text-tertiary guests">
@@ -95,7 +61,7 @@
                 </svg>
             </li>
         </ul>
-    </div>
+    </form>
 </nav>
 <div class="close-div" (click)="onDeactivateNav()" *ngIf="isNavActive">
 
