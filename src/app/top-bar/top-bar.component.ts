@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Destination } from '../shared/models/destination.model';
 import { GetAccommodationsService } from '../shared/services/get-accommodations.service';
-import { count, debounceTime, filter, map } from 'rxjs/operators'
+import { debounceTime, filter, map } from 'rxjs/operators'
 import { Accommodation } from '../shared/models/accommodation.model';
 import { Subject, Subscription } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-top-bar',
