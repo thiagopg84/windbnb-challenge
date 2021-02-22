@@ -32,7 +32,9 @@ export class TopBarComponent implements OnInit {
 
   // form
   searchForm = this.form.group({
-    destinationName: [null, Validators.required]
+    destinationCity: [null, Validators.required],
+    destinationCountry: [null, Validators.required],
+    guestsNumber: [null, Validators.required]
   })
 
   constructor(private getAccommodations: GetAccommodationsService, private form: FormBuilder) { }
@@ -49,6 +51,9 @@ export class TopBarComponent implements OnInit {
           this.destination = null;
           this.destinations = [];
           this.filteredDestinations = [];
+          this.searchForm.patchValue({
+            destinationCountry: null
+          })
           return query;
         }),
         debounceTime(250),
@@ -57,6 +62,9 @@ export class TopBarComponent implements OnInit {
         this.destination = null;
         this.destinations = [];
         this.filteredDestinations = [];
+        this.searchForm.patchValue({
+          destinationCountry: null
+        })
         this.fetchDb = this.getAccommodations.getAccommodations()
           .pipe(
             map(accommodations => {
@@ -127,34 +135,74 @@ export class TopBarComponent implements OnInit {
   increaseAdults() {
     this.numberOfAdults++;
     this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
+    if (this.numberOfGuests > 0) {
+      this.searchForm.patchValue({
+        guestsNumber: this.numberOfAdults
+      })
+    } else {
+      this.searchForm.patchValue({
+        guestsNumber: null
+      })
+    }
   }
 
   decreaseAdults() {
     if (this.numberOfAdults > 0) {
       this.numberOfAdults--;
       this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
+      if (this.numberOfGuests > 0) {
+        this.searchForm.patchValue({
+          guestsNumber: this.numberOfAdults
+        })
+      } else {
+        this.searchForm.patchValue({
+          guestsNumber: null
+        })
+      }
     }
   }
 
   increaseChildren() {
     this.numberOfChildren++;
     this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
+    if (this.numberOfGuests > 0) {
+      this.searchForm.patchValue({
+        guestsNumber: this.numberOfAdults
+      })
+    } else {
+      this.searchForm.patchValue({
+        guestsNumber: null
+      })
+    }
   }
 
   decreaseChildren() {
     if (this.numberOfChildren > 0) {
       this.numberOfChildren--;
       this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
+      if (this.numberOfGuests > 0) {
+        this.searchForm.patchValue({
+          guestsNumber: this.numberOfAdults
+        })
+      } else {
+        this.searchForm.patchValue({
+          guestsNumber: null
+        })
+      }
     }
   }
 
   defineDestination(city: string, country: string) {
     this.destination = new Destination(city, country);
     this.filteredDestinations = [];
+    this.searchForm.patchValue({
+      destinationCity: city,
+      destinationCountry: country
+    })
   }
 
   onSearchDestinations() {
-    this.searchQuery.next(this.searchForm.value.destinationName);
+    this.searchQuery.next(this.searchForm.value.destinationCity);
   }
 
   // longestCommonSubstring(strArr: string[]) {
@@ -174,13 +222,13 @@ export class TopBarComponent implements OnInit {
   // }
 
   similarity(s1, s2) {
-    var longer = s1;
-    var shorter = s2;
+    let longer = s1;
+    let shorter = s2;
     if (s1.length < s2.length) {
       longer = s2;
       shorter = s1;
     }
-    var longerLength = longer.length;
+    let longerLength = longer.length;
     if (longerLength == 0) {
       return 1.0;
     }
@@ -191,15 +239,15 @@ export class TopBarComponent implements OnInit {
     s1 = s1.toLowerCase();
     s2 = s2.toLowerCase();
   
-    var costs = new Array();
-    for (var i = 0; i <= s1.length; i++) {
-      var lastValue = i;
-      for (var j = 0; j <= s2.length; j++) {
+    let costs = new Array();
+    for (let i = 0; i <= s1.length; i++) {
+      let lastValue = i;
+      for (let j = 0; j <= s2.length; j++) {
         if (i == 0)
           costs[j] = j;
         else {
           if (j > 0) {
-            var newValue = costs[j - 1];
+            let newValue = costs[j - 1];
             if (s1.charAt(i - 1) != s2.charAt(j - 1))
               newValue = Math.min(Math.min(newValue, lastValue),
                 costs[j]) + 1;
@@ -215,6 +263,10 @@ export class TopBarComponent implements OnInit {
   }
 
   onSubmitSearchForm() {
-    console.log('submitou')
+    console.log(this.searchForm.getRawValue())
+    this.searchForm.reset();
+    this.numberOfAdults = 0;
+    this.numberOfChildren = 0;
+    this.numberOfGuests = 0;
   }
 }

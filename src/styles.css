@@ -37,3 +37,7 @@ html {
 button {
     cursor: pointer;
 }
+
+.margin-top-fix {
+    padding-top: 12rem;
+}

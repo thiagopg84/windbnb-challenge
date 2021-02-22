@@ -13,24 +13,15 @@ nav {
     padding: 0 2rem;
 }
 
-.top-bar__actions li > button {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: 0;
-    font-family: var(--font);
-    box-shadow: 0px 0px 1px transparent;
-    transition: all .2s;
-    border-radius: 1.6rem;
-}
-
 .btn-guests {
     transition: all .2s;
 }
 
-.btn-guests:hover {
+.btn-guests:hover,
+.magnifying-btn-active:hover,
+.btn:hover {
     background-color: var(--color-primary);
-    color: #F2F2F2;
+    color: white;
 }
 
 .top-bar__actions li > button:focus, .top-bar__actions li input[type="text"]:focus {
@@ -129,6 +120,8 @@ label[for="location"], label[for="btn-guests"] {
     font-size: .9rem;
     font-weight: 800;
     color: var(--color-secondary);
+    z-index: 2;
+    transition: all .2s;
 }
 
 .close-div {
@@ -146,6 +139,10 @@ label[for="location"], label[for="btn-guests"] {
 
 .location, .guests {
     position: relative;
+}
+
+.guests:hover label {
+    color: white;
 }
 
 .location-container {
@@ -238,6 +235,17 @@ label[for="location"], label[for="btn-guests"] {
     color: var(--color-secondary);
 }
 
+.btn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    font-family: var(--font);
+    box-shadow: 0px 0px 1px transparent;
+    transition: all .2s;
+    border-radius: 1.6rem;
+}
+
 .btn-destination {
     font-family: var(--font);
     background-color: transparent;
@@ -249,4 +257,21 @@ label[for="location"], label[for="btn-guests"] {
 
 .btn-destination:active {
     outline: none;
+}
+
+.magnifying-btn-active {
+    transition: all .2s;
+}
+
+.magnifying-btn-active svg, .btn svg {
+    fill: var(--color-primary);
+    transition: all .2s;
+}
+
+.magnifying-btn-active:hover svg, .btn:hover svg {
+    fill: white;
+}
+
+.btn-disabled {
+    opacity: .3;
 }
