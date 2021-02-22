@@ -244,6 +244,7 @@ label[for="location"], label[for="btn-guests"] {
     border: 0;
     padding: .5rem;
     transition: all .2s;
+    text-align: left;
 }
 
 .btn-destination:active {

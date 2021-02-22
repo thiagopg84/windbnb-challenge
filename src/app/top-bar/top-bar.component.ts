@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Destination } from '../shared/models/destination.model';
 import { GetAccommodationsService } from '../shared/services/get-accommodations.service';
-import { debounceTime, filter, map } from 'rxjs/operators'
+import { debounceTime, filter, first, map } from 'rxjs/operators'
 import { Accommodation } from '../shared/models/accommodation.model';
 import { Subject, Subscription } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -80,35 +80,38 @@ export class TopBarComponent implements OnInit {
                 //     }
                 //   }
                 // }
-                if (!this.destinations.some(e => e.city === accommodations[accommodation].city)) {
+                
+                if (!this.destinations.some(e => e.city === accommodations[accommodation].city)) { // checking if the array of destinations doesn't already have the current city
                   this.destinations.push(new Destination(accommodations[accommodation].city, accommodations[accommodation].country));
                 }
               }
               
-              this.filteredDestinations = this.destinations.filter(item => {
+              this.filteredDestinations = this.destinations.filter(item => { // checking if there is a perfect match in 'destinations' array (city and country)
                 let city: string = item.city.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/[^A-Z\d\s]/gi, '').replace(/\s+/g, ' ');
                 let country: string = item.country.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/[^A-Z\d\s]/gi, '').replace(/\s+/g, ' ');
-                return formattedQuery.includes(city) && formattedQuery.includes(country);
-                // if (this.longestCommonSubstring([city, formattedQuery]) && this.longestCommonSubstring([country, formattedQuery])) {
-                //   return (this.longestCommonSubstring([city, formattedQuery]) && this.longestCommonSubstring([country, formattedQuery]))
-                // }
+                return formattedQuery.includes(city) && formattedQuery.includes(country)                
               })
+              
+              if (this.filteredDestinations.length === 0) { // if there's no perfect match...
+              this.destinations.forEach(e => {
+                let city: string = e.city.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/[^A-Z\d\s]/gi, '').replace(/\s+/g, ' ');
+                let country: string = e.country.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/[^A-Z\d\s]/gi, '').replace(/\s+/g, ' ');
 
-              if (this.filteredDestinations.length === 0) {
-                this.destinations.forEach(e => {
-                  let city: string = e.city.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/[^A-Z\d\s]/gi, '').replace(/\s+/g, ' ');
-                  let country: string = e.country.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/[^A-Z\d\s]/gi, '').replace(/\s+/g, ' ');
-                  if (formattedQuery.includes(city) && !formattedQuery.includes(country)) {
-                    this.filteredDestinations.push(new Destination(e.city, e.country));
-                  } else if (formattedQuery.includes(country) && !formattedQuery.includes(city)) {
+                if (formattedQuery.includes(city) && !formattedQuery.includes(country)) { // if there's a perfect match for 'city'...
+                  this.filteredDestinations.push(new Destination(e.city, e.country));
+                } else if (formattedQuery.includes(country) && !formattedQuery.includes(city)) { // if there's a perfect match for 'country'...
+                  this.filteredDestinations.push(new Destination(e.city, e.country));
+                } else if (!formattedQuery.includes(city) && !formattedQuery.includes(country)) {  // if there isn't a perfect match, use algorithm...
+                  if (this.similarity(formattedQuery, city) > .5 || this.similarity(formattedQuery, country) > .5) {
                     this.filteredDestinations.push(new Destination(e.city, e.country));
                   }
-                })
-              }
-            })
-          ).subscribe(() => {
-            this.isSearching = false;
+                }
+              })
+            }
           })
+        ).subscribe(() => {
+          this.isSearching = false;
+        })
       })
   }
 
@@ -169,6 +172,47 @@ export class TopBarComponent implements OnInit {
   //     return firstItem.substring(0, i)
   //   }
   // }
+
+  similarity(s1, s2) {
+    var longer = s1;
+    var shorter = s2;
+    if (s1.length < s2.length) {
+      longer = s2;
+      shorter = s1;
+    }
+    var longerLength = longer.length;
+    if (longerLength == 0) {
+      return 1.0;
+    }
+    return (longerLength - this.editDistance(longer, shorter)) / parseFloat(longerLength);
+  }
+
+  editDistance(s1, s2) {
+    s1 = s1.toLowerCase();
+    s2 = s2.toLowerCase();
+  
+    var costs = new Array();
+    for (var i = 0; i <= s1.length; i++) {
+      var lastValue = i;
+      for (var j = 0; j <= s2.length; j++) {
+        if (i == 0)
+          costs[j] = j;
+        else {
+          if (j > 0) {
+            var newValue = costs[j - 1];
+            if (s1.charAt(i - 1) != s2.charAt(j - 1))
+              newValue = Math.min(Math.min(newValue, lastValue),
+                costs[j]) + 1;
+            costs[j - 1] = lastValue;
+            lastValue = newValue;
+          }
+        }
+      }
+      if (i > 0)
+        costs[s2.length] = lastValue;
+    }
+    return costs[s2.length];
+  }
 
   onSubmitSearchForm() {
     console.log('submitou')
