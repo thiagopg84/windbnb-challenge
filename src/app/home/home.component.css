@@ -1,7 +1,114 @@
-section {
-    min-height: 100vh;
+h1 {
+    margin-bottom: 3.2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
 }
 
-.content {
-    padding: 2rem;
+.cards-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, max-content));
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+
+.card {
+    width: 100%;
+    max-width: 39.5rem;
+    min-height: 34.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card__img {
+    overflow: hidden;
+    border-radius: 2.4rem;
+    height: 27rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__img img {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.card__infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.card__info-item {
+
+}
+
+.card__info-subitem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.super-host {
+    margin-right: .5rem;
+}
+
+.super-host p {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid var(--color-medium-dark);
+    text-align: center;
+    border-radius: 10rem;
+    padding: .5rem 1rem;
+    width: max-content;
+}
+
+.accommodation-type, .accommodation-rate p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.accommodation-type {
+    color: var(--color-light-dark);
+    margin-right: 1.5rem;
+}
+
+.accommodation-type p {
+    
+}
+
+.accommodation-rate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accommodation-rate svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .5rem;
+    transform: translateY(-1px);
+}
+
+.accommodation-rate p {
+    color: var(--color-medium-dark);
+}
+
+.accommodation-description {
+    margin-top: 1.2rem;
+}
+
+.accommodation-description p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-secondary);
 }

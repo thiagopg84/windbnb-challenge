@@ -1,6 +1,37 @@
-<app-top-bar></app-top-bar>
-<section class="margin-top-fix">
-    <div class="content">
-        <p>home works!</p>
+<app-top-bar (destinationData)="pullSearchData($event)"></app-top-bar>
+<section>
+    <div class="content limiter margin-top-fix">
+        <h1 *ngIf="isSearching === false && accommodations.length === 0">Sorry, no accommodations that match your criteria were found in <span style="color: var(--color-primary);">{{destination.city}}</span>, <span style="color: var(--color-primary);">{{destination.country}}</span> :(</h1>
+        <ng-container *ngIf="accommodations.length > 0">
+            <h1>Stays in {{destination.city}}, {{destination.country}}</h1>
+            <div class="cards-container">
+                <div class="card" *ngFor="let accommodation of accommodations">
+                    <div class="card__img">
+                        <img src="../../assets/images/{{ accommodation.photos[0] }}" alt="Accommodation photo">
+                    </div>
+                    <div class="card__infos">
+                        <div class="card__info-item super-host" *ngIf="accommodation.isSuperHost">
+                            <p>Super Host</p>
+                        </div>
+                        <div class="card__info-subitem">
+                            <div class="card__info-item accommodation-type">
+                                {{ accommodation.roomType }}
+                            </div>
+                            <div class="card__info-item">
+                                <div class="accommodation-rate">
+                                    <svg>
+                                        <use href="../../assets/images/sprite.svg#star"></use>
+                                    </svg>
+                                    <p>{{ accommodation.rating.toFixed(2) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__info-item accommodation-description">
+                        <p>{{ accommodation.shortDescription }}</p>
+                    </div>
+                </div>
+            </div>                
+        </ng-container>
     </div>
 </section>

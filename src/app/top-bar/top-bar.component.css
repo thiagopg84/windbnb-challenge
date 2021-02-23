@@ -130,6 +130,8 @@ label[for="location"], label[for="btn-guests"] {
     left: 0;
     min-height: 100vh;
     width: 100%;
+    z-index: 1;
+    background-color: #00000078;
 }
 
 .top-bar__actions-active {

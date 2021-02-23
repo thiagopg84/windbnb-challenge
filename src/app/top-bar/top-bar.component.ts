@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Destination } from '../shared/models/destination.model';
 import { GetAccommodationsService } from '../shared/services/get-accommodations.service';
-import { debounceTime, filter, first, map } from 'rxjs/operators'
+import { debounceTime, filter, map, } from 'rxjs/operators'
 import { Accommodation } from '../shared/models/accommodation.model';
 import { Subject, Subscription } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
+import { SearchResultsService } from '../shared/services/search-results.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -12,6 +13,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+
+  @Output() destinationData = new EventEmitter<Destination>();
 
   isNavActive: boolean = false;
   currentSection: string = '';
@@ -37,12 +40,16 @@ export class TopBarComponent implements OnInit {
     guestsNumber: [null, Validators.required]
   })
 
-  constructor(private getAccommodations: GetAccommodationsService, private form: FormBuilder) { }
+  constructor(private getAccommodations: GetAccommodationsService, private form: FormBuilder, private searchResults: SearchResultsService) { }
 
   ngOnInit(): void {
     // this.getAccommodations.getAccommodations().pipe(map(accommodations => {
     //   this.accommodations = accommodations;
     // })).subscribe()
+
+    this.searchResults.searchResults.subscribe(data => {
+      // console.log(data);
+    })
 
     this.searchSubscription = this.searchQuery
       .pipe(
@@ -263,8 +270,37 @@ export class TopBarComponent implements OnInit {
   }
 
   onSubmitSearchForm() {
-    console.log(this.searchForm.getRawValue())
-    this.searchForm.reset();
+    // console.log(this.searchForm.getRawValue())
+    this.getAccommodations.getAccommodations()
+      .pipe(
+        map(accommodations => {
+          this.searchResults.isSearching.next(true)
+          this.accommodations = [];
+          for (let accommodation in accommodations) {
+            let currentAccomodation: Accommodation = new Accommodation(null, null, null, null, [], null, null, null);
+            currentAccomodation.isSuperHost = accommodations[accommodation].isSuperHost;
+            currentAccomodation.roomType = accommodations[accommodation].roomType;
+            currentAccomodation.rating = accommodations[accommodation].rating;
+            currentAccomodation.shortDescription = accommodations[accommodation].shortDescription;
+            currentAccomodation.maxGuests = accommodations[accommodation].maxGuests;
+            currentAccomodation.city = accommodations[accommodation].city;
+            currentAccomodation.country = accommodations[accommodation].country;
+            for (let photo in accommodations[accommodation].photos) {
+              currentAccomodation.photos.push(accommodations[accommodation].photos[photo])
+            }
+            this.accommodations.push(currentAccomodation);
+          }
+          return this.accommodations;
+        })
+      ).subscribe(accommodations => {
+        this.destinationData.emit(this.destination)
+        this.searchResults.searchResults.next(accommodations.filter(accommodation => {
+          return accommodation.city === this.searchForm.value.destinationCity && accommodation.country === this.searchForm.value.destinationCountry && accommodation.maxGuests >= this.searchForm.value.guestsNumber;
+      }));
+        this.searchForm.reset();
+        this.searchResults.isSearching.next(false);
+      })
+    this.isNavActive = false;
     this.numberOfAdults = 0;
     this.numberOfChildren = 0;
     this.numberOfGuests = 0;

@@ -3,11 +3,11 @@
     "isSuperHost": true,
     "roomType": "Entire apartment",
     "rating": 4.7,
-    "shortDescription": "COCO",
+    "shortDescription": "Best aparment in town",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-01.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 5,
     "city": "Brasília",
     "country": "Brazil"
   },
@@ -15,23 +15,23 @@
     "isSuperHost": false,
     "roomType": "Private room",
     "rating": 4.3,
-    "shortDescription": "Bem legalzim",
+    "shortDescription": "Cozy room near the town square",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-02.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Cusco",
     "country": "Peru"
   },
   "2": {
     "isSuperHost": false,
-    "roomType": "Entire house",
+    "roomType": "Private room, 2 beds",
     "rating": 4.9,
-    "shortDescription": "eefefefefef",
+    "shortDescription": "A first class hotel room",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-03.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Machu Picchu",
     "country": "Peru"
   },
@@ -39,11 +39,11 @@
     "isSuperHost": false,
     "roomType": "Private room. 2 beds",
     "rating": 4.2,
-    "shortDescription": "shsdhdshdsh",
+    "shortDescription": "A couple of hundred meters away from Hyde Park",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-04.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "London",
     "country": "England"
   },
@@ -51,11 +51,11 @@
     "isSuperHost": true,
     "roomType": "Entire apartment",
     "rating": 5,
-    "shortDescription": "adfadfadf",
+    "shortDescription": "Good location, in Miraflores",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-05.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 5,
     "city": "Lima",
     "country": "Peru"
   },
@@ -63,11 +63,11 @@
     "isSuperHost": false,
     "roomType": "Private room",
     "rating": 4.7,
-    "shortDescription": "A f adf adf f",
+    "shortDescription": "Neat room near Gare du Nord",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-06.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Paris",
     "country": "France"
   },
@@ -75,11 +75,11 @@
     "isSuperHost": false,
     "roomType": "One bed on bunk bed",
     "rating": 4.7,
-    "shortDescription": "adfadfa df adf ad ad",
+    "shortDescription": "Best view of Old Town Square",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-07.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 1,
     "city": "Prague",
     "country": "Czech Republic"
   },
@@ -87,11 +87,11 @@
     "isSuperHost": true,
     "roomType": "Entire house. 3 suites",
     "rating": 4.8,
-    "shortDescription": "AWESOME FDP",
+    "shortDescription": "Best house in entire Rome",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-08.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 7,
     "city": "Rome",
     "country": "Italy"
   },
@@ -99,23 +99,23 @@
     "isSuperHost": false,
     "roomType": "Bedroom (private bathroom)",
     "rating": 4.4,
-    "shortDescription": "HOSTELZIM",
+    "shortDescription": "Friendly hostel with common area",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-09.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Milan",
     "country": "Italy"
   },
   "9": {
     "isSuperHost": false,
-    "roomType": "2 bedrooms",
+    "roomType": "Twin room (2 beds)",
     "rating": 4.1,
-    "shortDescription": "HEHEHEHE",
+    "shortDescription": "Hotel room near town fair",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-01.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Antwerp",
     "country": "Belgium"
   },
@@ -123,11 +123,11 @@
     "isSuperHost": true,
     "roomType": "Studio",
     "rating": 5,
-    "shortDescription": "ahuahuhsauahuah",
+    "shortDescription": "A modern studio (queen size bed and sofa-bed)",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-02.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 3,
     "city": "Bruge",
     "country": "Belgium"
   },
@@ -135,11 +135,11 @@
     "isSuperHost": false,
     "roomType": "Entire apartment",
     "rating": 4.9,
-    "shortDescription": "fjidaiajdia",
+    "shortDescription": "Best aparment in Amsterdam. Period.",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-03.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 3,
     "city": "Amsterdam",
     "country": "Holland"
   },
@@ -147,11 +147,11 @@
     "isSuperHost": false,
     "roomType": "Suite",
     "rating": 4.75,
-    "shortDescription": "COCasasO",
+    "shortDescription": "A nice fully equipped suite",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-04.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Dusseldörf",
     "country": "Germany"
   },
@@ -159,11 +159,11 @@
     "isSuperHost": true,
     "roomType": "Bunkbed (private bathroom)",
     "rating": 4.9,
-    "shortDescription": "hoaoaoaoao",
+    "shortDescription": "Very modern and clean hostel",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-05.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 1,
     "city": "Berlin",
     "country": "Germany"
   },
@@ -171,11 +171,11 @@
     "isSuperHost": false,
     "roomType": "2 suites",
     "rating": 4.53,
-    "shortDescription": "aassasasasas",
+    "shortDescription": "Cozy apartment near Praça do Comércio",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-06.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 5,
     "city": "Lisbon",
     "country": "Portugal"
   },
@@ -183,11 +183,11 @@
     "isSuperHost": false,
     "roomType": "Suite",
     "rating": 4.78,
-    "shortDescription": "ahaahahahha",
+    "shortDescription": "Free Wi-Fi, near City Hall",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-07.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Sintra",
     "country": "Portugal"
   },
@@ -195,47 +195,47 @@
     "isSuperHost": true,
     "roomType": "Entire house (2 suites)",
     "rating": 4.97,
-    "shortDescription": "entireieieieie",
+    "shortDescription": "Huge house just outside of the town center",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-08.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 5,
     "city": "Porto",
     "country": "Portugal"
   },
   "17": {
     "isSuperHost": false,
-    "roomType": "Moquifão brabo",
+    "roomType": "Simple room (private bathroom)",
     "rating": 2.5,
-    "shortDescription": "COCO",
+    "shortDescription": "Clean-ish, cozy-ish slum. That's it.",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-09.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Ollantaytambo",
     "country": "Peru"
   },
   "18": {
     "isSuperHost": true,
-    "roomType": "Cortiço pulguento",
+    "roomType": "Bunk bed (room with private bathroom)",
     "rating": 3.2,
-    "shortDescription": "ALOK",
+    "shortDescription": "Nice hostel near Guinness Factory",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-01.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 1,
     "city": "Dublin",
     "country": "Ireland"
   },
   "19": {
     "isSuperHost": false,
-    "roomType": "Chalé chulezento",
+    "roomType": "Private room with bathroom",
     "rating": 2.35,
-    "shortDescription": "CHULÉ BRABO!",
+    "shortDescription": "Very cozy private room, free wi-fi",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-02.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
     "city": "Glasgow",
     "country": "Scotland"
   },
@@ -243,11 +243,35 @@
     "isSuperHost": false,
     "roomType": "Twin bed room",
     "rating": 3.5,
-    "shortDescription": "Insano hein",
+    "shortDescription": "Share an apartment with foreigners!",
     "photos": {
-      "0": "photo1.jpg"
+      "0": "photo-03.jpg"
     },
-    "maxGuests": 0,
+    "maxGuests": 2,
+    "city": "Lisbon",
+    "country": "Portugal"
+  },
+  "21": {
+    "isSuperHost": true,
+    "roomType": "Three suites apartment",
+    "rating": 3.5,
+    "shortDescription": "Luxurious apartment near Arco da Rua Augusta",
+    "photos": {
+      "0": "photo-04.jpg"
+    },
+    "maxGuests": 7,
+    "city": "Lisbon",
+    "country": "Portugal"
+  },
+  "22": {
+    "isSuperHost": true,
+    "roomType": "Shared bedroom",
+    "rating": 4.1,
+    "shortDescription": "Modern hostel, room with private bathroom",
+    "photos": {
+      "0": "photo-05.jpg"
+    },
+    "maxGuests": 1,
     "city": "Lisbon",
     "country": "Portugal"
   }

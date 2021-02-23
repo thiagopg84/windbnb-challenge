@@ -11,6 +11,7 @@
     --color-primary: #eb5757;
     --color-secondary: #333333;
     --color-medium-dark: #4F4F4F;
+    --color-light-dark: #828282;
     --color-tertiary: #bdbdbd;
     --font: 'Mulish', sans-serif;
 }
@@ -20,6 +21,15 @@ html {
     
     font-family: var(--font);
     font-weight: 400;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    min-height: 100vh;
+    height: auto;
 }
 
 .text-primary {
@@ -34,10 +44,22 @@ html {
     color: var(--color-tertiary)
 }
 
-button {
-    cursor: pointer;
-}
 
 .margin-top-fix {
     padding-top: 12rem;
+}
+
+.limiter {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.content {
+    padding: 12rem 2rem 2rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
 }
