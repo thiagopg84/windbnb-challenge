@@ -89,7 +89,7 @@ export class TopBarComponent implements OnInit {
                 //   }
                 // }
                 
-                if (!this.destinations.some(e => e.city === accommodations[accommodation].city)) { // checking if the array of destinations doesn't already have the current city
+                if (!this.destinations.some(e => e.city === accommodations[accommodation].city)) { // checking if the array of destinations already has the current city
                   this.destinations.push(new Destination(accommodations[accommodation].city, accommodations[accommodation].country));
                 }
               }
@@ -137,7 +137,7 @@ export class TopBarComponent implements OnInit {
     this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
     if (this.numberOfGuests > 0) {
       this.searchForm.patchValue({
-        guestsNumber: this.numberOfAdults
+        guestsNumber: this.numberOfGuests
       })
     } else {
       this.searchForm.patchValue({
@@ -152,7 +152,7 @@ export class TopBarComponent implements OnInit {
       this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
       if (this.numberOfGuests > 0) {
         this.searchForm.patchValue({
-          guestsNumber: this.numberOfAdults
+          guestsNumber: this.numberOfGuests
         })
       } else {
         this.searchForm.patchValue({
@@ -167,7 +167,7 @@ export class TopBarComponent implements OnInit {
     this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
     if (this.numberOfGuests > 0) {
       this.searchForm.patchValue({
-        guestsNumber: this.numberOfAdults
+        guestsNumber: this.numberOfGuests
       })
     } else {
       this.searchForm.patchValue({
@@ -182,7 +182,7 @@ export class TopBarComponent implements OnInit {
       this.numberOfGuests = this.numberOfAdults + this.numberOfChildren;
       if (this.numberOfGuests > 0) {
         this.searchForm.patchValue({
-          guestsNumber: this.numberOfAdults
+          guestsNumber: this.numberOfGuests
         })
       } else {
         this.searchForm.patchValue({
